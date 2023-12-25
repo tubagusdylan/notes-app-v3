@@ -1,0 +1,50 @@
+/* Mobile First */
+
+header {
+  padding: 15px 20px;
+  background-color: purple;
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.5);
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+}
+
+.btn-nav {
+  margin-right: 20px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-nav:hover {
+  color: rgb(210, 210, 210);
+}
+
+@media (min-width: 768px) {
+  header {
+    padding: 1rem 10rem;
+  }
+
+  .nav-list {
+    font-size: 28px;
+  }
+
+  .btn-nav {
+    font-size: 28px;
+  }
+}

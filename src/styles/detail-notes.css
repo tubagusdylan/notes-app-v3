@@ -1,0 +1,68 @@
+.container-2 {
+  padding: 3rem;
+  position: relative;
+}
+
+.note-title {
+  color: purple;
+  font-size: 50px;
+}
+
+.note-time {
+  display: block;
+  margin: 10px 0 30px 0;
+  color: rgba(192, 104, 199, 0.87);
+}
+
+.note-body {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.button-wrap {
+  display: flex;
+  position: fixed;
+  gap: 14px;
+  bottom: 30px;
+  right: 20px;
+}
+
+.button-2 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: purple;
+  box-shadow: 0px 0px 2px 3px rgba(168, 84, 149, 0.331);
+  cursor: pointer;
+}
+
+.button-2 i {
+  font-size: 20px;
+  color: white;
+}
+
+@media (min-width: 992px) {
+  .container-2 {
+    padding: 5rem 13rem;
+  }
+
+  .note-title {
+    font-size: 60px;
+  }
+
+  .note-time {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .note-body {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .button-wrap {
+    right: 10rem;
+  }
+}

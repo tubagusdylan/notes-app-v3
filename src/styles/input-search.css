@@ -1,0 +1,36 @@
+.search-container {
+  position: relative;
+}
+
+.input-search {
+  width: 100%;
+  padding: 10px 0;
+  padding-left: 50px;
+  padding-right: 10px;
+  border: 1px solid purple;
+  border-radius: 20px;
+  color: black;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.input-search::placeholder {
+  color: rgba(157, 9, 157, 0.532);
+}
+
+.input-search:focus {
+  outline: 3px solid rgba(235, 135, 235, 0.55);
+}
+
+.icon-search {
+  color: purple;
+  position: absolute;
+  top: 12px;
+  left: 15px;
+}
+
+@media (min-width: 992px) {
+  .input-search {
+    width: 50%;
+  }
+}

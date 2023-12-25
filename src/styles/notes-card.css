@@ -1,0 +1,43 @@
+.card {
+  width: 100%;
+  border: 2px solid purple;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.card h2 {
+  font-size: 18px;
+}
+
+.link-title {
+  color: purple;
+}
+
+.card span {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: rgba(192, 104, 199, 0.87);
+}
+
+.card p {
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  width: 100%;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: calc(50% - 15px);
+  }
+}
+
+@media (min-width: 992px) {
+  .card {
+    width: calc(25% - 15px);
+  }
+}

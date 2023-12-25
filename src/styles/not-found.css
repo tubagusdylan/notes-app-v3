@@ -1,0 +1,27 @@
+.container-3 {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.status-code {
+  font-size: 70px;
+  color: purple;
+}
+
+.status {
+  font-size: 40px;
+  color: rgba(207, 12, 207, 0.726);
+}
+
+@media (min-width: 992px) {
+  .status-code {
+    font-size: 200px;
+  }
+
+  .status {
+    font-size: 60px;
+  }
+}
