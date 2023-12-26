@@ -1,8 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "../styles/navbar.css";
 
 const Navbar = ({ isLoged }) => {
+  const navigate = useNavigate();
+
+  const onLogOut = () => {
+    localStorage.clear();
+    return navigate(0);
+  };
+
   return (
     <header>
       <nav>
@@ -25,7 +32,7 @@ const Navbar = ({ isLoged }) => {
             <button className="btn-nav" hidden={true}>
               <i className="fa-solid fa-sun"></i>
             </button>
-            <button className="btn-nav" hidden={!isLoged}>
+            <button className="btn-nav" hidden={!isLoged} onClick={onLogOut}>
               <i className="fa-solid fa-right-from-bracket"></i>
             </button>
           </li>
