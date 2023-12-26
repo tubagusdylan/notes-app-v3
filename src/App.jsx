@@ -12,6 +12,16 @@ function App() {
   const [isLoged, setIsLoged] = useState(false);
   const [theme, setTheme] = useState("light");
 
+  useEffect(() => {
+    if (getAccessToken() !== null) {
+      setIsLoged(true);
+    }
+
+    return () => {
+      setIsLoged(false);
+    };
+  }, []);
+
   const toggleTheme = () => {
     setTheme((prev) => {
       return prev === "light" ? "dark" : "light";
@@ -24,16 +34,6 @@ function App() {
       toggleTheme,
     };
   }, [theme]);
-
-  useEffect(() => {
-    if (getAccessToken() !== null) {
-      setIsLoged(true);
-    }
-
-    return () => {
-      setIsLoged(false);
-    };
-  }, []);
 
   return (
     <>

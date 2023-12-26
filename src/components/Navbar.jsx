@@ -13,7 +13,7 @@ const Navbar = ({ isLoged }) => {
             </Link>
           </li>
           <li className="nav-item-wrap">
-            <Link to="/archives" className="nav-item" hidden={isLoged}>
+            <Link to="/archives" className="nav-item" hidden={!isLoged}>
               Archives
             </Link>
             <button className="btn-nav">
@@ -25,7 +25,7 @@ const Navbar = ({ isLoged }) => {
             <button className="btn-nav" hidden={true}>
               <i className="fa-solid fa-sun"></i>
             </button>
-            <button className="btn-nav" hidden={isLoged}>
+            <button className="btn-nav" hidden={!isLoged}>
               <i className="fa-solid fa-right-from-bracket"></i>
             </button>
           </li>

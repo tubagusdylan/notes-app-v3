@@ -1,0 +1,35 @@
+.login-container {
+  width: 300px;
+  margin: 30% auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 5px 1px rgb(241, 82, 230);
+  border-radius: 5px;
+}
+
+.login-title {
+  text-align: center;
+  color: purple;
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.login-container p {
+  text-align: center;
+}
+
+.link-register {
+  text-decoration: none;
+  color: purple;
+}
+
+.link-register:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .login-container {
+    width: 400px;
+    margin: 8% auto;
+  }
+}
