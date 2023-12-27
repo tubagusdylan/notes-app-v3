@@ -7,15 +7,16 @@
   font-size: 50px;
   font-weight: 600;
   margin-bottom: 20px;
-  color: purple;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
 }
 
 .title-input::placeholder {
-  color: rgba(117, 6, 117, 0.434);
+  color: var(--placeholder-color);
 }
 
 .title-input:focus {
-  outline: 3px solid rgba(117, 6, 117, 0.434);
+  outline: 3px solid var(--secondary-color);
 }
 
 .body-input {
@@ -27,13 +28,14 @@
   border: none;
   font-size: 24px;
   margin-bottom: 20px;
-  color: purple;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
 }
 
 .body-input::placeholder {
-  color: rgba(117, 6, 117, 0.434);
+  color: var(--placeholder-color);
 }
 
 .body-input:focus {
-  outline: 3px solid rgba(117, 6, 117, 0.434);
+  outline: 3px solid var(--secondary-color);
 }
