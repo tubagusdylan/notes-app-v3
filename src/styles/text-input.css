@@ -13,6 +13,7 @@
   outline: none;
   margin-bottom: 20px;
   background-color: var(--primary-color);
+  color: var(--input-color);
 }
 
 .input-unique::placeholder {

@@ -6,6 +6,8 @@
   --navbar-color: purple;
   --nav-item-color: white;
   --placeholder-color: grey;
+  --input-color: black;
+  --time-color: rgba(192, 104, 199, 0.87);
 }
 
 [data-theme="dark"] {
@@ -14,6 +16,8 @@
   --navbar-color: rgb(52, 7, 40);
   --nav-item-color: rgb(252, 228, 255);
   --placeholder-color: rgb(178, 178, 178);
+  --input-color: white;
+  --time-color: rgb(200, 182, 201);
 }
 
 * {

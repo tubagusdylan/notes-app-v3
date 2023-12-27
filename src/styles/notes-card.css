@@ -1,6 +1,6 @@
 .card {
   width: 100%;
-  border: 2px solid purple;
+  border: 2px solid var(--secondary-color);
   padding: 15px;
   border-radius: 10px;
 }
@@ -10,14 +10,14 @@
 }
 
 .link-title {
-  color: purple;
+  color: var(--secondary-color);
 }
 
 .card span {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: rgba(192, 104, 199, 0.87);
+  color: var(--time-color);
 }
 
 .card p {
@@ -28,6 +28,7 @@
   line-height: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: var(--input-color);
 }
 
 @media (min-width: 768px) {
