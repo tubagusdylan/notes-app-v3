@@ -24,21 +24,23 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="regist-container">
-      <h1 className="login-title">Register</h1>
-      <form onSubmit={onSubmitRegister}>
-        <TextInput type="text" id="Name" placeholder="Insert Your Name" value={name} onValueChange={onNameChange} />
-        <TextInput type="email" id="Email" placeholder="Insert Your Email" value={email} onValueChange={onEmailChange} />
-        <TextInput type="password" id="Password" placeholder="Insert Your Password" value={password} onValueChange={onPasswordChange} />
-        <TextInput type="password" id="Confirm Password" placeholder="Confirm Your Password" value={confirmPw} onValueChange={onConfirmPwChange} />
-        <Button>Register</Button>
-      </form>
-      <p>
-        Have an account?{" "}
-        <Link to="/" className="link-register">
-          LOGIN
-        </Link>
-      </p>
+    <div className="background-regist">
+      <div className="regist-container">
+        <h1 className="login-title">Register</h1>
+        <form onSubmit={onSubmitRegister}>
+          <TextInput type="text" id="Name" placeholder="Insert Your Name" value={name} onValueChange={onNameChange} />
+          <TextInput type="email" id="Email" placeholder="Insert Your Email" value={email} onValueChange={onEmailChange} />
+          <TextInput type="password" id="Password" placeholder="Insert Your Password" value={password} onValueChange={onPasswordChange} />
+          <TextInput type="password" id="Confirm Password" placeholder="Confirm Your Password" value={confirmPw} onValueChange={onConfirmPwChange} />
+          <Button>Register</Button>
+        </form>
+        <p>
+          Have an account?{" "}
+          <Link to="/" className="link-register">
+            LOGIN
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };

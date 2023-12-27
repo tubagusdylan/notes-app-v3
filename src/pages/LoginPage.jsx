@@ -20,19 +20,21 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="login-container">
-      <h1 className="login-title">Login</h1>
-      <form onSubmit={onSubmitLogin}>
-        <TextInput type="email" id="Email" placeholder="Insert Your Email" value={email} onValueChange={onEmailChange} />
-        <TextInput type="password" id="Password" placeholder="Insert Your Password" value={password} onValueChange={onPasswordChange} />
-        <Button>Login</Button>
-      </form>
-      <p>
-        New User?{" "}
-        <Link to="/register" className="link-register">
-          REGISTER
-        </Link>
-      </p>
+    <div className="background">
+      <div className="login-container">
+        <h1 className="login-title">Login</h1>
+        <form onSubmit={onSubmitLogin}>
+          <TextInput type="email" id="Email" placeholder="Insert Your Email" value={email} onValueChange={onEmailChange} />
+          <TextInput type="password" id="Password" placeholder="Insert Your Password" value={password} onValueChange={onPasswordChange} />
+          <Button>Login</Button>
+        </form>
+        <p>
+          New User?{" "}
+          <Link to="/register" className="link-register">
+            REGISTER
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };

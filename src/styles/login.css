@@ -1,39 +1,55 @@
+.background {
+  width: 100%;
+  height: calc(100vh - 65.6px);
+  padding-top: 8rem;
+  background-color: var(--primary-color);
+}
+
+.background-regist {
+  width: 100%;
+  height: calc(100vh - 65.6px);
+  padding-top: 4rem;
+  background-color: var(--primary-color);
+}
+
 .login-container {
   width: 350px;
-  margin: 30% auto;
   padding: 20px;
-  background-color: white;
+  margin: 0 auto;
+  background-color: var(--primary-color);
   box-shadow: 0 0 5px 1px rgb(241, 82, 230);
   border-radius: 5px;
 }
 
 .regist-container {
   width: 350px;
-  margin: 10% auto;
   padding: 20px;
-  background-color: white;
+  margin: 0 auto;
+  background-color: var(--primary-color);
   box-shadow: 0 0 5px 1px rgb(241, 82, 230);
   border-radius: 5px;
 }
 
 .login-title {
   text-align: center;
-  color: purple;
+  color: var(--secondary-color);
   margin-bottom: 20px;
   font-size: 26px;
 }
 
 .login-container p {
   text-align: center;
+  color: var(--secondary-color);
 }
 
 .regist-container p {
   text-align: center;
+  color: var(--secondary-color);
 }
 
 .link-register {
   text-decoration: none;
-  color: purple;
+  color: var(--secondary-color);
 }
 
 .link-register:hover {
@@ -41,13 +57,15 @@
 }
 
 @media (min-width: 768px) {
+  .background {
+    padding-top: 7rem;
+  }
+
   .login-container {
     width: 400px;
-    margin: 8% auto;
   }
 
   .regist-container {
     width: 400px;
-    margin: 4% auto;
   }
 }

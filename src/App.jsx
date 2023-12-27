@@ -23,6 +23,14 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.setAttribute("data-theme", theme);
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+  }, [theme]);
+
   const toggleTheme = () => {
     setTheme((prev) => {
       return prev === "light" ? "dark" : "light";
@@ -64,5 +72,3 @@ function App() {
 }
 
 export default App;
-
-//TODO: 1. Ganti theme jadi gelap

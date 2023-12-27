@@ -1,9 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
+:root {
+  --primary-color: white;
+  --secondary-color: purple;
+  --navbar-color: purple;
+  --nav-item-color: white;
+  --placeholder-color: grey;
+}
+
+[data-theme="dark"] {
+  --primary-color: rgb(52, 7, 40);
+  --secondary-color: white;
+  --navbar-color: rgb(52, 7, 40);
+  --nav-item-color: rgb(252, 228, 255);
+  --placeholder-color: rgb(178, 178, 178);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 }
 
 body {

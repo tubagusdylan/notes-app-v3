@@ -1,8 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import ThemeContext from "../utils/ThemeContext";
 import PropTypes from "prop-types";
 import "../styles/navbar.css";
 
 const Navbar = ({ isLoged }) => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
   const navigate = useNavigate();
 
   const onLogOut = () => {
@@ -26,10 +29,10 @@ const Navbar = ({ isLoged }) => {
             <button className="btn-nav">
               <i className="fa-solid fa-language"></i>
             </button>
-            <button className="btn-nav">
+            <button className="btn-nav" onClick={toggleTheme} hidden={theme === "dark"}>
               <i className="fa-solid fa-moon"></i>
             </button>
-            <button className="btn-nav" hidden={true}>
+            <button className="btn-nav" onClick={toggleTheme} hidden={theme === "light"}>
               <i className="fa-solid fa-sun"></i>
             </button>
             <button className="btn-nav" hidden={!isLoged} onClick={onLogOut}>
