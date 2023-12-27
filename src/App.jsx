@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect, useMemo } from "react";
 import { getAccessToken } from "./utils/network-data";
+import { getCurrentTheme } from "./utils/currentTheme";
+import { getCurrentLocale } from "./utils/currentLocale";
 import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import ArchivePage from "./pages/ArchivePage";
@@ -15,8 +17,8 @@ import LocaleContext from "./utils/LocaleContext";
 function App() {
   const [isLoged, setIsLoged] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [theme, setTheme] = useState("light");
-  const [locale, setLocale] = useState("id");
+  const [theme, setTheme] = useState(getCurrentTheme());
+  const [locale, setLocale] = useState(getCurrentLocale());
 
   useEffect(() => {
     if (getAccessToken() !== null) {
@@ -34,7 +36,12 @@ function App() {
     } else {
       document.documentElement.removeAttribute("data-theme");
     }
+    localStorage.setItem("theme", theme);
   }, [theme]);
+
+  useEffect(() => {
+    localStorage.setItem("locale", locale);
+  }, [locale]);
 
   const toggleTheme = () => {
     setTheme((prev) => {
