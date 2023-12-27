@@ -1,6 +1,7 @@
 import SearchNotes from "../components/SearchNotes";
 import NotesContainer from "../components/NotesContainer";
-import { useState, useEffect } from "react";
+import LocaleContext from "../utils/LocaleContext";
+import { useState, useEffect, useContext } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { getUserLogged, getArchivedNotes } from "../utils/network-data";
 import "../styles/archived.css";
@@ -10,6 +11,7 @@ const ArchivePage = () => {
   const [notes, setNotes] = useState([]);
   const [searchNotes, setSearchNotes] = useState([]);
   const [searchParam, setSearchParam] = useSearchParams("");
+  const { locale } = useContext(LocaleContext);
 
   const title = searchParam.get("title") || "";
 
@@ -50,10 +52,10 @@ const ArchivePage = () => {
 
   return (
     <div className="container">
-      <h1>Welcome, {userName}</h1>
-      <h1>Archived Notes</h1>
+      <h1>{locale === "id" ? `Selamat Datang, ${userName}` : `Welcome, ${userName}`}</h1>
+      <h1>{locale === "id" ? "Catatan Arsip" : "Archived Notes"}</h1>
       <SearchNotes value={title} onValueChange={changeSearchParam} />
-      {notes.length > 0 ? <NotesContainer notes={title.length > 0 ? searchNotes : notes} /> : <p className="msg">Catatan kosong</p>}
+      {notes.length > 0 ? <NotesContainer notes={title.length > 0 ? searchNotes : notes} /> : <p className="msg">{locale === "id" ? "Catatan belum ada" : "Empty Notes"}</p>}
       <Link to="/notes/new">
         <button className="button">
           <i className="fa-solid fa-plus"></i>

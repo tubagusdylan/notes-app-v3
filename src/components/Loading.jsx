@@ -1,7 +1,12 @@
+import "../styles/loading.css";
+
 const Loading = () => {
   return (
-    <div>
-      <h5>Loading...</h5>
+    <div className="container">
+      <div className="name-skeleton"></div>
+      <div className="title-skeleton"></div>
+      <div className="search-skeleton"></div>
+      <div className="card-skeleton"></div>
     </div>
   );
 };

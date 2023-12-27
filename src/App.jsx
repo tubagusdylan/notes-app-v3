@@ -10,11 +10,13 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import PageNotFound from "./pages/PageNotFound";
 import ThemeContext from "./utils/ThemeContext";
+import LocaleContext from "./utils/LocaleContext";
 
 function App() {
   const [isLoged, setIsLoged] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [theme, setTheme] = useState("light");
+  const [locale, setLocale] = useState("id");
 
   useEffect(() => {
     if (getAccessToken() !== null) {
@@ -40,12 +42,25 @@ function App() {
     });
   };
 
+  const toggleLocale = () => {
+    setLocale((prev) => {
+      return prev === "id" ? "en" : "id";
+    });
+  };
+
   const themeContextValue = useMemo(() => {
     return {
       theme,
       toggleTheme,
     };
   }, [theme]);
+
+  const localeContextValue = useMemo(() => {
+    return {
+      locale,
+      toggleLocale,
+    };
+  }, [locale]);
 
   if (isLoading) {
     return null;
@@ -54,24 +69,26 @@ function App() {
   return (
     <>
       <ThemeContext.Provider value={themeContextValue}>
-        <Routes>
-          <Route path="/" element={<Layout isLoged={isLoged} />}>
-            {isLoged ? (
-              <>
-                <Route index element={<HomePage />} />
-                <Route path="archives" element={<ArchivePage />} />
-                <Route path="notes/new" element={<AddNotePage />} />
-                <Route path="notes/:id" element={<DetailNotePage />} />
-              </>
-            ) : (
-              <>
-                <Route index element={<LoginPage />} />
-                <Route path="register" element={<RegisterPage />} />
-              </>
-            )}
-            <Route path="*" element={<PageNotFound />} />
-          </Route>
-        </Routes>
+        <LocaleContext.Provider value={localeContextValue}>
+          <Routes>
+            <Route path="/" element={<Layout isLoged={isLoged} />}>
+              {isLoged ? (
+                <>
+                  <Route index element={<HomePage />} />
+                  <Route path="archives" element={<ArchivePage />} />
+                  <Route path="notes/new" element={<AddNotePage />} />
+                  <Route path="notes/:id" element={<DetailNotePage />} />
+                </>
+              ) : (
+                <>
+                  <Route index element={<LoginPage />} />
+                  <Route path="register" element={<RegisterPage />} />
+                </>
+              )}
+              <Route path="*" element={<PageNotFound />} />
+            </Route>
+          </Routes>
+        </LocaleContext.Provider>
       </ThemeContext.Provider>
     </>
   );
