@@ -1,6 +1,5 @@
 import SearchNotes from "../components/SearchNotes";
 import NotesContainer from "../components/NotesContainer";
-import Loading from "../components/Loading";
 import LocaleContext from "../utils/LocaleContext";
 import { useState, useEffect, useContext } from "react";
 import { Link, useSearchParams } from "react-router-dom";
@@ -9,7 +8,7 @@ import "../styles/home.css";
 
 const HomePage = () => {
   const [userName, setUserName] = useState("");
-  const [notes, setNotes] = useState(null);
+  const [notes, setNotes] = useState([]);
   const [searchNotes, setSearchNotes] = useState([]);
   const [searchParam, setSearchParam] = useSearchParams("");
   const { locale } = useContext(LocaleContext);
@@ -50,10 +49,6 @@ const HomePage = () => {
       setNotes([]);
     };
   }, []);
-
-  if (notes === null) {
-    return <Loading />;
-  }
 
   return (
     <div className="container">
