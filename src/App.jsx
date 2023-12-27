@@ -10,13 +10,14 @@ import ThemeContext from "./utils/ThemeContext";
 
 function App() {
   const [isLoged, setIsLoged] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     if (getAccessToken() !== null) {
       setIsLoged(true);
     }
-
+    setIsLoading(false);
     return () => {
       setIsLoged(false);
     };
@@ -34,6 +35,10 @@ function App() {
       toggleTheme,
     };
   }, [theme]);
+
+  if (isLoading) {
+    return null;
+  }
 
   return (
     <>
@@ -59,3 +64,5 @@ function App() {
 }
 
 export default App;
+
+//TODO: 1. Ganti theme jadi gelap
