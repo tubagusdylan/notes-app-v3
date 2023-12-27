@@ -5,6 +5,7 @@ import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import ArchivePage from "./pages/ArchivePage";
 import AddNotePage from "./pages/AddNotePage";
+import DetailNotePage from "./pages/DetailNotePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import PageNotFound from "./pages/PageNotFound";
@@ -60,6 +61,7 @@ function App() {
                 <Route index element={<HomePage />} />
                 <Route path="archives" element={<ArchivePage />} />
                 <Route path="notes/new" element={<AddNotePage />} />
+                <Route path="notes/:id" element={<DetailNotePage />} />
               </>
             ) : (
               <>
