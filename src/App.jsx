@@ -3,6 +3,7 @@ import { useState, useEffect, useMemo } from "react";
 import { getAccessToken } from "./utils/network-data";
 import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
+import ArchivePage from "./pages/ArchivePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import PageNotFound from "./pages/PageNotFound";
@@ -56,6 +57,7 @@ function App() {
             {isLoged ? (
               <>
                 <Route index element={<HomePage />} />
+                <Route path="archives" element={<ArchivePage />} />
               </>
             ) : (
               <>

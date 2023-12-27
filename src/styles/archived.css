@@ -1,3 +1,4 @@
 .msg {
   margin-top: 20px;
+  color: var(--input-color);
 }
